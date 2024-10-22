@@ -2,7 +2,7 @@ YahyaSadek
 
 
 PREREQUISITES:
--Customized Docker image of the application database on DockerHub [its dockerfile is in ./db-dockerfile] & rest of images are on dockerhub official
+-Customized Docker image of the application database on DockerHub [its dockerfile is in ./db-dockerfile]
 - Infrastructure already set using Terraform's workflow and ingress controller is already set.
 -Create acc in SonarCloud, Organization, Project. in the org, create a Quality gate & attach it to the project 
 -IAM User, ECR Repository
