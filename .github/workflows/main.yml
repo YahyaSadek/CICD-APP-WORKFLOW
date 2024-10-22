@@ -1,11 +1,11 @@
-name: vprofile actions
+name: Java APP actions
 on: 
   push:
     branches:
       - main
 env:
   AWS_REGION: us-east-2
-  ECR_REPOSITORY: vprofileapp
+  ECR_REPOSITORY: <Name of the ECR Repo>
   EKS_CLUSTER: vprofile-eks
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
          distribution: 'temurin' # See 'Supported distributions' for available options
          java-version: '11'
 
-      # Setup sonar-scanner
+      # Setup sonar-scanner CLI
       - name: Setup SonarQube
         uses: warchant/setup-sonar-scanner@v7
 
@@ -110,4 +110,4 @@ jobs:
           chart-path: helm/vprofilecharts
           namespace: default
           values: appimage=${{ secrets.REGISTRY }}/${{ env.ECR_REPOSITORY }},apptag=${{ github.run_number }}
-          name: vprofile-stack    
+          name: JavaAPPStack   

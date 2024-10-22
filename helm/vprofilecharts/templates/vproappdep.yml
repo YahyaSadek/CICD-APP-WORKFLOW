@@ -20,6 +20,8 @@ spec:
         ports:
         - name: vproapp-port
           containerPort: 8080
+      imagePullSecrets:
+        - regcred
       initContainers:
       - name: init-mydb
         image: busybox
